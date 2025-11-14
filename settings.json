@@ -1,0 +1,54 @@
+{
+    // PyMakr workspace settings for VS Code (JSON with comments allowed)
+    // Adjust values to match your device (COM port, IP, username/password, sync folder)
+    "pymakr": {
+        // Human friendly device name
+        "name": "Pycom Device",
+
+    // Connection settings (use either address for WiFi or autoconnect_port for serial)
+        "address": "192.168.4.1",         // device IP for WiFi flash mode (change or remove if using serial)
+        "username": "micro",              // common default; change if needed
+        "password": "pymakr",
+
+        // Serial autoconnect (set autoconnect to true to try connecting automatically)
+        "autoconnect": true,
+        "autoconnect_port": "COM3",       // change to your serial port (e.g. "/dev/ttyUSB0" on Linux)
+        "autoconnect_baudrate": 115200,
+        "autoconnect_delay": 1,           // seconds to wait before attempting autoconnect
+
+        // File sync/upload behavior
+        "sync_folder": "",                // relative project folder to sync (empty = project root)
+        "sync_all_files": false,
+        "sync_file_regex": ".*\\.py$",    // regex to match files to sync
+        "save_on_upload": true,
+        "fast_upload": false,
+        "flash_boot": false,
+
+        // Control sequences sent on connect
+        "ctrl_c_on_connect": true,
+        "ctrl_d_on_connect": false,
+
+        // Actions/hooks (arrays of strings or objects) - run on connect/upload if needed
+        "init_cmds": [],                  // run these commands immediately after connecting
+        "before": [],                     // commands to run before upload/sync
+        "after": [],                      // commands to run after upload/sync
+
+        // Files/folders to ignore when syncing
+        "exclude": [
+            ".vscode",
+            ".git",
+            ".DS_Store"
+        ],
+        "ignore": [
+            "*.pyc",
+            "__pycache__"
+        ],
+
+        // Target type (device | local)
+        "target": "device",
+
+        // Advanced options
+        "pyboard": false,                 // set true if using pyboard protocol devices
+        "open_on_start": false            // open serial console when connecting
+    }
+}
